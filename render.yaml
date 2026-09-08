@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: arbdask
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /api/health
+    envVars:
+      - key: TRADING_MODE
+        value: paper
+      - key: LIVE_TRADING_ENABLED
+        value: "false"
+      - key: PUBLIC_DEMO_MODE
+        value: "true"
