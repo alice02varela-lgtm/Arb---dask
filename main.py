@@ -56,7 +56,7 @@ def risk_check(op:dict): return risk.evaluate(op)
 
 @app.post('/api/paper/execute')
 def paper_execute(op:dict):
- global stopped
+ 
  if stopped or breaker.tripped: raise HTTPException(409,'Emergency stop/circuit breaker active')
  decision=risk.evaluate(op)
  audit('RISK_DECISION',str(decision))
