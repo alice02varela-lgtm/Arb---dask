@@ -6,9 +6,9 @@ name: Python application
 on:
   workflow_dispatch:
   push:
-    branches: [ "principal" ]
+    branches: [ "main" ]
   pull_request:
-    branches: [ "principal" ]
+    branches: [ "main" ]
 
 permissions:
   contents: read
