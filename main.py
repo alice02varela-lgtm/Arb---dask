@@ -1,11 +1,11 @@
 import os, sqlite3, time, uuid
 from fastapi import FastAPI, HTTPException
 from fastapi.responses import HTMLResponse
-from .market import opportunity
-from .core import RiskEngine, CircuitBreaker, Leg, Route, OrderState
-from .connectors import BinanceTestnet, OKXDemo
-from .orchestrator import AutoBot
-from .dex import DEXGuard
+from market import opportunity
+from core import RiskEngine, CircuitBreaker, Leg, Route, OrderState
+from connectors import BinanceTestnet, OKXDemo
+from orchestrator import AutoBot
+from dex import DEXGuard
 
 app=FastAPI(title='ArbDask v3.0 Release Candidate')
 risk=RiskEngine(float(os.getenv('MIN_NET_PROFIT_PCT','0.50')),float(os.getenv('MAX_TRADE_NOTIONAL_AOA','500000')),float(os.getenv('MAX_SLIPPAGE_PCT','0.50')),float(os.getenv('MAX_QUOTE_AGE_MS','1500')))
