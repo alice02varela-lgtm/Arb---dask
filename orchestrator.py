@@ -1,5 +1,4 @@
-from .core import Route, Leg, OrderState
-import uuid, time
+from core import Route, Leg, OrderState
 
 class AutoBot:
     def __init__(self, risk, breaker, audit):
